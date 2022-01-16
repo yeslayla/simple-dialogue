@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/simple_dialouge/samples/minimal/minimal.gd" type="Script" id=1]
+
+[node name="Simple Dialogue Minimal Example" type="Node"]
+script = ExtResource( 1 )

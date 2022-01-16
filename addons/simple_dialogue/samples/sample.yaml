@@ -1,0 +1,53 @@
+apiVersion: 1.0 # `apiVersion` is used just in case of future updates to the schema
+kind: timeline # `kind` should be set to timeline for all timeline files
+events: # `events` are a list of event objects
+
+# Sample Event Object
+- # Two string properties are provided for each locale
+  # `name` should be the name of the speaker
+  # `message` should be the words said by the speaker
+  name:
+    en_US: Person
+  message:
+    en_US: Hello, I say witty dialogue!
+
+# Sample choice
+- name:
+    en_US: Question Asker
+  message:
+    en_US: Pick a number between 1-3
+  
+  # A `choices` block of `choice` objects can be added
+  # to work as a choice
+  choices:
+  - # A choice object contains two properties
+    # `choice` is a string that works as the display text for the choice
+    # `events` is a list of all events triggered by this choice
+    choice:
+      en_US: 1
+    events:
+    - name:
+        en_US: Question Asker
+      message:
+        en_US: You picked '1'
+  - choice:
+      en_US: 2
+    events:
+    - name:
+        en_US: Question Asker
+      message:
+        en_US: You picked '2'
+  - choice:
+      en_US: 3
+    events:
+    - name:
+        en_US: Question Asker
+      message:
+        en_US: You picked '3'
+
+# After choice events finish, the timeline returns
+# the timeline
+- name:
+    en_US: Person
+  message:
+    en_US: Wow! That is a very cool choice!
